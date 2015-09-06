@@ -2,6 +2,7 @@
 
 variable "aws_access_key" {}
 variable "aws_secret_key" {}
+variable "public_key_path" {}
 
 provider "aws" {
   access_key = "${var.aws_access_key}"
@@ -20,6 +21,8 @@ resource "aws_instance" "rust" {
     volume_size = "30"
     delete_on_termination = "false"
   }
+
+  key_name = "${aws_key_pair.portaj.key_name}"
 
   vpc_security_group_ids = ["${aws_security_group.remote_access.id}", "${aws_security_group.rust_public.id}", "${aws_security_group.rust_rcon.id}"]
 
@@ -79,4 +82,9 @@ resource "aws_security_group" "rust_rcon" {
   tags {
     Name = "rust_rcon"
   }
+}
+
+resource "aws_key_pair" "portaj" {
+  key_name = "portaj"
+  public_key = "${file(var.public_key_path)}"
 }

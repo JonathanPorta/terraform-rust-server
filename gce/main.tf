@@ -1,11 +1,11 @@
 # GCE Provider Config for a Rust server
 
-variable "account_file_path" {}
+variable "gce_account_file_path" {}
 
 provider "google" {
-    account_file = "${file(var.account_file_path)}"
-    project = "ogs-production"
-    region = "us-central1"
+  account_file = "${file(var.gce_account_file_path)}"
+  project = "ogs-production"
+  region = "us-central1"
 }
 
 resource "google_compute_instance" "default" {

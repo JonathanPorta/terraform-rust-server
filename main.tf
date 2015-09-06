@@ -1,12 +1,14 @@
 # Make a separate module so we can deploy to each infra separately.
 module "aws" {
-    source = "./aws"
+  source = "./aws"
 
-    aws_access_key = "${var.aws_access_key}"
-    aws_secret_key = "${var.aws_secret_key}"
+  aws_access_key = "${var.aws_access_key}"
+  aws_secret_key = "${var.aws_secret_key}"
+  public_key_path = "${var.public_key_path}"
 }
 
 module "gce" {
-    source = "./gce"
-    account_file_path = "account.json"
+  source = "./gce"
+
+  gce_account_file_path = "${var.gce_account_file_path}"
 }

@@ -1,3 +1,5 @@
 # Put secret things here, well, not here, but in the file without the .sample suffix
 aws_access_key = ""
 aws_secret_key = ""
+public_key_path = ""
+gce_account_file_path = ""
