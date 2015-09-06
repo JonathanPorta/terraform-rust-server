@@ -1,4 +1,5 @@
-# Configure the Google Cloud provider
+# GCE Provider Config for a Rust server
+
 provider "google" {
     account_file = "${file("account.json")}"
     project = "ogs-production"

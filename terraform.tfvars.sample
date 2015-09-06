@@ -1,1 +1,3 @@
-admin_password = "pust-ya-pw-here"
+# Put secret things here, well, not here, but in the file without the .sample suffix
+aws_access_key = ""
+aws_secret_key = ""
