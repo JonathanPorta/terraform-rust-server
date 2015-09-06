@@ -1,7 +1,9 @@
 # GCE Provider Config for a Rust server
 
+variable "account_file_path" {}
+
 provider "google" {
-    account_file = "${file("account.json")}"
+    account_file = "${file(var.account_file_path)}"
     project = "ogs-production"
     region = "us-central1"
 }
