@@ -9,6 +9,7 @@ resource "google_compute_instance" "default" {
   name = "rust"
   machine_type = "n1-standard-2"
   zone = "us-central1-f"
+  can_ip_forward: true
 
   disk {
     image = "windows-server-2012-r2-dc-v20150813"
@@ -32,12 +33,12 @@ resource "google_compute_firewall" "default" {
 
   allow {
     protocol = "tcp"
-    ports = ["80", "5718", "28055"]
+    ports = ["80", "5718", "28015", "28016"]
   }
 
   allow {
     protocol = "udp"
-    ports = ["80", "5718", "28055"]
+    ports = ["80", "5718", "28015", "28016"]
   }
 
   source_ranges = ["0.0.0.0/0"]
