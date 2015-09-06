@@ -9,7 +9,7 @@ resource "google_compute_instance" "default" {
   name = "rust"
   machine_type = "n1-standard-2"
   zone = "us-central1-f"
-  can_ip_forward: true
+  can_ip_forward: "true"
 
   disk {
     image = "windows-server-2012-r2-dc-v20150813"
