@@ -16,12 +16,12 @@ resource "aws_instance" "rust" {
   availability_zone = "us-west-2b"
 
   root_block_device {
-    volume_type = "SSD"
+    volume_type = "gp2"
     volume_size = "30"
     delete_on_termination = "false"
   }
 
-  security_groups = ["${aws_security_group.remote_access.id}", "${aws_security_group.rust_public.id}", "${aws_security_group.rust_rcon.id}"]
+  vpc_security_group_ids = ["${aws_security_group.remote_access.id}", "${aws_security_group.rust_public.id}", "${aws_security_group.rust_rcon.id}"]
 
   tags {
     Name = "RustServer"
