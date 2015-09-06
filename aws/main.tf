@@ -1,4 +1,4 @@
-# AWS EC2 Provider Config for a Rust server
+# AWS Provider Config for a Rust server
 
 provider "aws" {
   access_key = "${var.aws_access_key}"
