@@ -19,10 +19,11 @@ resource "aws_instance" "rust" {
   root_block_device {
     volume_type = "gp2"
     volume_size = "30"
-    delete_on_termination = "false"
+    delete_on_termination = "true" # TODO: change back to false after done testing terraform config
   }
 
   key_name = "${aws_key_pair.portaj.key_name}"
+  user_data = "${file("${path.module}/bootstrap.script")}"
 
   vpc_security_group_ids = ["${aws_security_group.remote_access.id}", "${aws_security_group.rust_public.id}", "${aws_security_group.rust_rcon.id}"]
 

@@ -1,0 +1,1 @@
+<powershell>iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/JonathanPorta/windows-bootstrap/master/bootstrap.ps1'))</powershell>

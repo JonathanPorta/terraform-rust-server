@@ -3,3 +3,4 @@ account.json
 terraform.tfvars
 *.tfstate
 *.tfstate.backup
+*.pem
