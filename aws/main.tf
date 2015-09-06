@@ -64,10 +64,19 @@ resource "aws_security_group" "rust_public" {
   name = "rust_public"
   description = "Allow all inbound public Rust traffic - game traffic + livemap + query port(might not be needed)"
 
+  # Livemap
+  ingress {
+    from_port = 28015
+    to_port = 28015
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  # Game server
   ingress {
     from_port = 28015
     to_port = 28016
-    protocol = "-1"
+    protocol = "udp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 

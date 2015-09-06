@@ -1,4 +1,6 @@
-<powershell>iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/JonathanPorta/windows-bootstrap/master/bootstrap.ps1'))</powershell>
-<powershell>iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/JonathanPorta/windows-bootstrap/master/bootstrap.ps1'))</powershell>
-<powershell>c:\steamcmd\steamcmd.exe +login anonymous +force_install_dir c:\rust-server +app_update 258550 validate +quit</powershell>
-<powershell>iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/JonathanPorta/windows-bootstrap/master/bootstrap.ps1'))</powershell>
+<powershell>
+  iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/JonathanPorta/windows-bootstrap/master/bootstrap.ps1'))
+  iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/JonathanPorta/windows-bootstrap/master/bootstrap.ps1'))
+  c:\steamcmd\steamcmd.exe +login anonymous +force_install_dir c:\rust-server +app_update 258550 validate +quit
+  iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/JonathanPorta/windows-bootstrap/master/bootstrap.ps1'))
+</powershell>
