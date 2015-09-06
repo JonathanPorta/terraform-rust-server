@@ -32,12 +32,12 @@ resource "google_compute_firewall" "default" {
 
   allow {
     protocol = "tcp"
-    ports = ["80", "28055"]
+    ports = ["80", "5718", "28055"]
   }
 
   allow {
     protocol = "udp"
-    ports = ["80", "28055"]
+    ports = ["80", "5718", "28055"]
   }
 
   source_ranges = ["0.0.0.0/0"]
