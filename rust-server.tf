@@ -7,7 +7,7 @@ provider "google" {
 
 resource "google_compute_instance" "default" {
   name = "rust"
-  machine_type = "g1-small"
+  machine_type = "n1-standard-2"
   zone = "us-central1-f"
 
   disk {
