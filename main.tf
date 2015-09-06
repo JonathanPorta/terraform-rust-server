@@ -6,7 +6,7 @@ module "aws" {
     aws_secret_key = "${var.aws_secret_key}"
 }
 
-#module "gce" {
-#    source = "./gce"
-#    account_file_path = "account.json"
-#}
+module "gce" {
+    source = "./gce"
+    account_file_path = "account.json"
+}
