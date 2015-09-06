@@ -13,7 +13,7 @@ provider "cloudflare" {
 resource "cloudflare_record" "rust_dns" {
     domain = "${var.cloudflare_domain}"
     name = "${var.cloudflare_subdomain}"
-    value = "${aws_eip.rust_public}"
+    value = "${aws_eip.rust_public.public_ip}"
     type = "A"
     ttl = 120
 }
