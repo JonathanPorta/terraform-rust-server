@@ -39,12 +39,19 @@ resource "aws_eip" "rust_public" {
 
 resource "aws_security_group" "remote_access" {
   name = "remote_access"
-  description = "Allow all inbound remote access traffic"
+  description = "Allow all inbound remote access traffic and all outbound traffic"
 
   ingress {
     from_port = 3389
     to_port = 3389
     protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
