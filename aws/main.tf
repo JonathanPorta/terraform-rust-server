@@ -62,12 +62,12 @@ resource "aws_security_group" "remote_access" {
 
 resource "aws_security_group" "rust_public" {
   name = "rust_public"
-  description = "Allow all inbound public Rust traffic"
+  description = "Allow all inbound public Rust traffic - game traffic + livemap + query port(might not be needed)"
 
   ingress {
     from_port = 28015
     to_port = 28016
-    protocol = "udp"
+    protocol = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
